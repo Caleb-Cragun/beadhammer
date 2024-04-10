@@ -34,16 +34,16 @@ df = pd.read_csv("data.csv", sep=",")
 
 col3, col4 = st.columns(2)
 
+def display_row(row):
+  st.header(row["name"])
+  st.subheader(row["faction"])
+  st.image('images/' + row["image"])
+  st.write(row["description"])
+
 with col3:
   for index, row in df[:5].iterrows():
-    st.header(row["name"])
-    st.subheader(row["faction"])
-    st.image('images/' + row["image"])
-    st.write(row["description"])
+    display_row(row)
 
 with col4:
   for index, row in df[5:].iterrows():
-    st.header(row["name"])
-    st.subheader(row["faction"])
-    st.image('images/' + row["image"])
-    st.write(row["description"])
+    display_row(row)

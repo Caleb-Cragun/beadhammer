@@ -38,7 +38,7 @@ st.write("Here's a few of the models I've made.")
 
 df = pd.read_csv("data.csv", sep=",")
 
-col5, col6 = st.columns(2)
+col5, empty_col1, col6 = st.columns([1.5, 0.5, 1.5])
 
 def display_row(row):
   st.header(row["name"])
